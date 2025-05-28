@@ -32,3 +32,34 @@ html, body {
   opacity: 1;
   transform: translateY(0);
 }
+
+.sosmed-btn.clicked span.bg-amber-400 {
+  transform: scale(1) !important;
+  transition: transform 0.3s !important;
+}
+
+.card-hoverable.clicked .card-overlay {
+  opacity: 1 !important;
+  transition: opacity 0.3s !important;
+}
+.card-hoverable.clicked img.card {
+  transform: scale(1.05) !important;
+  transition: transform 0.3s !important;
+}
+
+#btTalk.clicked {
+  background-color: transparent;
+  color: #FFB900;
+  border-color: #FFB900;
+  color: #FFB900;
+  /* Pastikan transisi smooth */
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* buat kelas clicked yang sama efeknya seperti group-hover */
+#btTalk.clicked > div > span:first-child {
+  transform: translateY(-100%);
+}
+#btTalk.clicked > div > span:last-child {
+  transform: translateY(-100%);
+}

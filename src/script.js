@@ -67,6 +67,66 @@ $(document).ready(function () {
     });
 });
 
+const btn = document.getElementById('btTalk');
+
+function triggerClickEffect() {
+  btn.classList.add('clicked');
+  setTimeout(() => {
+    btn.classList.remove('clicked');
+  }, 600);
+}
+
+// Untuk touch devices (HP, tablet)
+btn.addEventListener('touchstart', (e) => {
+  // prevent default agar tidak dobel event click + touchstart
+  e.preventDefault();
+  triggerClickEffect();
+  $('#btContact').trigger('click');
+});
+
+document.querySelectorAll('.sosmed-btn').forEach(link => {
+  link.addEventListener('touchstart', function(e) {
+    // Hilangkan efek di link lain
+    document.querySelectorAll('.sosmed-btn').forEach(l => {
+      l.classList.remove('clicked');
+      // Kembalikan scale-0
+      const span = l.querySelector('.bg-amber-400');
+      if (span) {
+        span.classList.remove('scale-100');
+        if (!span.classList.contains('scale-0')) span.classList.add('scale-0');
+      }
+    });
+    // Tambahkan efek di link yang ditekan
+    this.classList.add('clicked');
+    const span = this.querySelector('.bg-amber-400');
+    if (span) {
+      span.classList.remove('scale-0');
+      span.classList.add('scale-100');
+    }
+    // Hilangkan efek setelah animasi
+    setTimeout(() => {
+      this.classList.remove('clicked');
+      if (span) {
+        span.classList.remove('scale-100');
+        if (!span.classList.contains('scale-0')) span.classList.add('scale-0');
+      }
+    }, 400);
+  });
+});
+
+document.querySelectorAll('.card-hoverable').forEach(card => {
+  card.addEventListener('touchstart', function(e) {
+    // Hilangkan efek di card lain
+    document.querySelectorAll('.card-hoverable').forEach(c => c.classList.remove('clicked'));
+    // Tambahkan efek di card yang ditekan
+    this.classList.add('clicked');
+    // Hilangkan efek setelah animasi
+    setTimeout(() => {
+      this.classList.remove('clicked');
+    }, 600);
+  });
+});
+
 /* Form */
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxrJiMtiq7DB4_OzniOt4gyxMu7JSyNJp4zXUW_pF7bP24lWLqFLiFoFSj7xWGiAL-S2A/exec'
 const form = document.forms['portfolio-contact-form']
@@ -122,3 +182,4 @@ form.addEventListener('submit', e => {
     })
     .catch(error => console.error('Error!', error.message))
 });
+
