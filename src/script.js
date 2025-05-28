@@ -67,6 +67,7 @@ $(document).ready(function () {
     });
 });
 
+/* Animation */
 const btn = document.getElementById('btTalk');
 
 function triggerClickEffect() {
@@ -76,9 +77,7 @@ function triggerClickEffect() {
   }, 600);
 }
 
-// Untuk touch devices (HP, tablet)
 btn.addEventListener('touchstart', (e) => {
-  // prevent default agar tidak dobel event click + touchstart
   e.preventDefault();
   triggerClickEffect();
   $('#btContact').trigger('click');
@@ -86,24 +85,20 @@ btn.addEventListener('touchstart', (e) => {
 
 document.querySelectorAll('.sosmed-btn').forEach(link => {
   link.addEventListener('touchstart', function(e) {
-    // Hilangkan efek di link lain
     document.querySelectorAll('.sosmed-btn').forEach(l => {
       l.classList.remove('clicked');
-      // Kembalikan scale-0
       const span = l.querySelector('.bg-amber-400');
       if (span) {
         span.classList.remove('scale-100');
         if (!span.classList.contains('scale-0')) span.classList.add('scale-0');
       }
     });
-    // Tambahkan efek di link yang ditekan
     this.classList.add('clicked');
     const span = this.querySelector('.bg-amber-400');
     if (span) {
       span.classList.remove('scale-0');
       span.classList.add('scale-100');
     }
-    // Hilangkan efek setelah animasi
     setTimeout(() => {
       this.classList.remove('clicked');
       if (span) {
@@ -116,11 +111,8 @@ document.querySelectorAll('.sosmed-btn').forEach(link => {
 
 document.querySelectorAll('.card-hoverable').forEach(card => {
   card.addEventListener('touchstart', function(e) {
-    // Hilangkan efek di card lain
     document.querySelectorAll('.card-hoverable').forEach(c => c.classList.remove('clicked'));
-    // Tambahkan efek di card yang ditekan
     this.classList.add('clicked');
-    // Hilangkan efek setelah animasi
     setTimeout(() => {
       this.classList.remove('clicked');
     }, 600);
@@ -139,11 +131,11 @@ const alert = document.getElementById('alert-4');
 
 function showAlert() {
   const alert = document.getElementById('alert-4');
-  alert.style.display = 'flex'; // tampilkan alert
+  alert.style.display = 'flex'; 
   setTimeout(() => {
     alert.classList.remove('opacity-0', 'translate-y-3');
     alert.classList.add('opacity-100', 'translate-y-0');
-  }, 50); // delay kecil agar transisi dimulai
+  }, 50); 
 }
 
 function closeAlert() {

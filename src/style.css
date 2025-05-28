@@ -52,11 +52,9 @@ html, body {
   color: #FFB900;
   border-color: #FFB900;
   color: #FFB900;
-  /* Pastikan transisi smooth */
   transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 
-/* buat kelas clicked yang sama efeknya seperti group-hover */
 #btTalk.clicked > div > span:first-child {
   transform: translateY(-100%);
 }
