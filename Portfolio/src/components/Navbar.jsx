@@ -2,12 +2,12 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <nav id="navbarContainer" class="pt-5 fixed inset-x-0 top-0 z-50">
-      <div class="mx-auto w-64 md:w-72 lg:w-80 bg-gray-400/20 rounded-2xl shadow-lg px-4 py-1 flex justify-between gap-2">
+    <nav id="navbarContainer" className="pt-5 fixed inset-x-0 top-0 z-50">
+      <div className="mx-auto w-64 md:w-72 lg:w-80 bg-gray-400/20 rounded-2xl shadow-lg px-4 py-1 flex justify-between gap-2">
         {/* <!-- About  --> */}
-        <button id="btAbout" class="relative p-2 rounded-md transition group text-white hover:text-black cursor-pointer">
-          <svg class="transition" width="24px" height="24px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff">
+        <button id="btAbout" className="relative p-2 rounded-md transition group text-white hover:text-black cursor-pointer">
+          <svg className="transition" width="24px" height="24px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
+            xmlnsXlink="http://www.w3.org/1999/xlink" fill="#ffffff">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
             <title>About</title>
@@ -23,13 +23,13 @@ const Navbar = () => {
               </g>
             </g>
           </svg>
-          <span class="absolute animate__animated animate__fadeInDown animate__faster left-1/2 -translate-x-1/2 top-full mt-2 text-xs bg-gray-400/20 text-white px-2 py-0.5 rounded hidden group-hover:block">About</span>
-          <span class="absolute inset-0 bg-amber-400 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-md -z-10"></span>
+          <span className="absolute animate__animated animate__fadeInDown animate__faster left-1/2 -translate-x-1/2 top-full mt-2 text-xs bg-gray-400/20 text-white px-2 py-0.5 rounded hidden group-hover:block">About</span>
+          <span className="absolute inset-0 bg-amber-400 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-md -z-10"></span>
         </button>
 
         {/* <!-- Resume --> */}
-        <button id="btResume" class="relative p-2 rounded-md transition group text-white hover:text-black cursor-pointer">
-          <svg class="transition" width="24px" height="24px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+        <button id="btResume" className="relative p-2 rounded-md transition group text-white hover:text-black cursor-pointer">
+          <svg className="transition" width="24px" height="24px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <title>Resume</title>
             <g id="Page-1" stroke="none" stroke-width="1" fill-rule="evenodd">
               <g id="Dribbble-Light-Preview" transform="translate(-420.000000, -2799.000000)">
@@ -42,15 +42,15 @@ const Navbar = () => {
             </g>
           </svg>
           <span
-            class="absolute animate__animated animate__fadeInDown animate__faster left-1/2 -translate-x-1/2 top-full mt-2 text-xs bg-gray-400/20 text-white px-2 py-0.5 rounded hidden group-hover:block">Resume</span>
+            className="absolute animate__animated animate__fadeInDown animate__faster left-1/2 -translate-x-1/2 top-full mt-2 text-xs bg-gray-400/20 text-white px-2 py-0.5 rounded hidden group-hover:block">Resume</span>
           <span
-            class="absolute inset-0 bg-amber-400 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-md -z-10"></span>
+            className="absolute inset-0 bg-amber-400 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-md -z-10"></span>
         </button>
 
         {/* <!-- Portfolio  --> */}
-        <button id="btPortfolio" class="relative p-2 rounded-md transition group text-white hover:text-black cursor-pointer">
-          <svg class="transition" width="24px" height="24px" viewBox="0 0 18 18" version="1.1"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <button id="btPortfolio" className="relative p-2 rounded-md transition group text-white hover:text-black cursor-pointer">
+          <svg className="transition" width="24px" height="24px" viewBox="0 0 18 18" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
             <title>Portfolio</title>
@@ -67,15 +67,15 @@ const Navbar = () => {
             </g>
           </svg>
           <span
-            class="absolute animate__animated animate__fadeInDown animate__faster left-1/2 -translate-x-1/2 top-full mt-2 text-xs bg-gray-400/20 text-white px-2 py-0.5 rounded hidden group-hover:block">Portfolio</span>
+            className="absolute animate__animated animate__fadeInDown animate__faster left-1/2 -translate-x-1/2 top-full mt-2 text-xs bg-gray-400/20 text-white px-2 py-0.5 rounded hidden group-hover:block">Portfolio</span>
           <span
-            class="absolute inset-0 bg-amber-400 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-md -z-10"></span>
+            className="absolute inset-0 bg-amber-400 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-md -z-10"></span>
         </button>
 
         {/* <!-- Contact --> */}
-        <button id="btContact" class="relative p-2 rounded-md transition group text-white hover:text-black cursor-pointer">
-          <svg class="transition" width="25px" height="25px" viewBox="0 0 20 20" version="1.1"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <button id="btContact" className="relative p-2 rounded-md transition group text-white hover:text-black cursor-pointer">
+          <svg className="transition" width="25px" height="25px" viewBox="0 0 20 20" version="1.1"
+            xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
             <g id="SVGRepo_iconCarrier">
@@ -92,9 +92,9 @@ const Navbar = () => {
             </g>
           </svg>
           <span
-            class="absolute animate__animated animate__fadeInDown animate__faster left-1/2 -translate-x-1/2 top-full mt-2 text-xs bg-gray-400/20 text-white px-2 py-0.5 rounded hidden group-hover:block">Contact</span>
+            className="absolute animate__animated animate__fadeInDown animate__faster left-1/2 -translate-x-1/2 top-full mt-2 text-xs bg-gray-400/20 text-white px-2 py-0.5 rounded hidden group-hover:block">Contact</span>
           <span
-            class="absolute inset-0 bg-amber-400 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-md -z-10"></span>
+            className="absolute inset-0 bg-amber-400 scale-0 group-hover:scale-100 transition-transform duration-300 rounded-md -z-10"></span>
         </button>
       </div>
     </nav>

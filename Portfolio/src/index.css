@@ -5,7 +5,7 @@ html, body {
 }
 
 .noise {
-  background-image: url('grainy.svg') !important;
+  background-image: url('../grainy.svg') !important;
   background-repeat: repeat !important;
 }
 
