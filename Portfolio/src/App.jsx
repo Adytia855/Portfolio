@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
@@ -15,13 +15,20 @@ const sectionVariants = {
 
 const App = () => {
   const [activeSection, setActiveSection] = useState('aboutMe');
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    if (contentRef.current && window.innerWidth < 1024) {
+      contentRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [activeSection]);
 
   return (
     <main id="body" className="bg-black noise min-h-screen text-white">
       <Navbar setActiveSection={setActiveSection} activeSection={activeSection} />
       <main id="profileContainer" className="pt-26 flex flex-col lg:flex-row gap-6 min-h-screen space-y-8 px-4 md:px-28 lg:px-24 xl:px-60">
-        <Profile  onLetsTalk={() => setActiveSection('contact')} />
-        <div id="contentContainer" className="flex flex-col gap-6 lg:w-2/3">
+        <Profile onLetsTalk={() => setActiveSection('contact')} />
+        <div id="contentContainer" className="flex flex-col gap-6 lg:w-2/3" ref={contentRef}>
           <AnimatePresence mode="wait">
             {activeSection === 'aboutMe' && (
               <motion.div key="aboutMe" variants={sectionVariants} initial="initial" animate="animate" exit="exit">
