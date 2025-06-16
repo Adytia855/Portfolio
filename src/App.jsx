@@ -2,6 +2,9 @@ import React from 'react'
 import Navbar from './components/Navbar'
 import Profile from './components/Profile'
 import AboutMe from './components/AboutMe'
+import Resume from './components/Resume'
+import Portfolio from './components/Portfolio'
+import Contact from './components/Contact'
 
 const App = () => {
   return (
@@ -11,6 +14,9 @@ const App = () => {
         <Profile />
         <div id="contentContainer" class="flex flex-col gap-6 lg:w-2/3">
         <AboutMe />
+        <Resume />
+        <Portfolio />
+        <Contact />
         </div>
       </section>
     </main>
