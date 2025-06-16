@@ -7,12 +7,6 @@ import Resume from './components/Resume'
 import Portfolio from './components/Portfolio'
 import Contact from './components/Contact'
 
-const sectionVariants = {
-  initial: { opacity: 0, y: 40 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.6, type: 'spring', stiffness: 60 } },
-  exit: { opacity: 0, y: -40, transition: { duration: 0.3 } },
-}
-
 const App = () => {
   const [activeSection, setActiveSection] = useState('aboutMe')
   const [activeNav, setActiveNav] = useState('aboutMe')
@@ -20,10 +14,25 @@ const App = () => {
   const [formLoading, setFormLoading] = useState(false)
   const formRef = useRef(null)
 
+  // Refs for each section
+  const sectionRefs = {
+    aboutMe: useRef(null),
+    resume: useRef(null),
+    portfolio: useRef(null),
+    contact: useRef(null),
+  }
+
   // Section navigation handler
   const handleNavClick = (section) => {
     setActiveSection(section)
     setActiveNav(section)
+    // Use scroll-behavior: smooth and scrollMarginTop for better smoothness
+    setTimeout(() => {
+      const el = sectionRefs[section]?.current
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' })
+      }
+    }, 100)
   }
 
   // Contact form submit handler
@@ -50,27 +59,25 @@ const App = () => {
       <section id="profileContainer" className="pt-26 flex flex-col lg:flex-row gap-6 min-h-screen space-y-8 px-4 md:px-28 lg:px-24 xl:px-60">
         <Profile onTalkClick={() => handleNavClick('contact')} />
         <div id="contentContainer" className="flex flex-col gap-6 lg:w-2/3">
+          {/* All sections rendered, but animated in/out with Framer Motion */}
           <AnimatePresence mode="wait" initial={false}>
-            {activeSection === 'aboutMe' && (
-              <motion.div key="aboutMe" variants={sectionVariants} initial="initial" animate="animate" exit="exit" style={{ width: '100%' }}>
-                <AboutMe />
-              </motion.div>
-            )}
-            {activeSection === 'resume' && (
-              <motion.div key="resume" variants={sectionVariants} initial="initial" animate="animate" exit="exit" style={{ width: '100%' }}>
-                <Resume />
-              </motion.div>
-            )}
-            {activeSection === 'portfolio' && (
-              <motion.div key="portfolio" variants={sectionVariants} initial="initial" animate="animate" exit="exit" style={{ width: '100%' }}>
-                <Portfolio isActive={activeSection === 'portfolio'} />
-              </motion.div>
-            )}
-            {activeSection === 'contact' && (
-              <motion.div key="contact" variants={sectionVariants} initial="initial" animate="animate" exit="exit" style={{ width: '100%' }} >
-                <Contact formRef={formRef} onFormSubmit={handleFormSubmit} showAlert={showAlert} formLoading={formLoading} />
-              </motion.div>
-            )}
+            {['aboutMe', 'resume', 'portfolio', 'contact'].map((section) => (
+              activeSection === section && (
+                <motion.div
+                  key={section}
+                  ref={sectionRefs[section]}
+                  initial={{ opacity: 0, y: 40 }}
+                  animate={{ opacity: 1, y: 0, transition: { duration: 0.6, type: 'spring', stiffness: 60 } }}
+                  exit={{ opacity: 0, y: -40, transition: { duration: 0.3 } }}
+                  style={{ width: '100%', scrollMarginTop: '120px', position: 'relative' }}
+                >
+                  {section === 'aboutMe' && <AboutMe />}
+                  {section === 'resume' && <Resume />}
+                  {section === 'portfolio' && <Portfolio isActive={activeSection === 'portfolio'} />}
+                  {section === 'contact' && <Contact formRef={formRef} onFormSubmit={handleFormSubmit} showAlert={showAlert} formLoading={formLoading} />}
+                </motion.div>
+              )
+            ))}
           </AnimatePresence>
         </div>
       </section>
