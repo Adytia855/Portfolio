@@ -1,8 +1,11 @@
 import React from 'react'
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-    <div>App</div>
+    <main id="body" className="bg-black noise min-h-screen text-white">
+      <Navbar />
+    </main>
   )
 }
 
