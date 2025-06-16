@@ -1,8 +1,14 @@
 import React from 'react'
+import { motion } from 'framer-motion'
 import demon from '../assets/img/demon.png'
 import todo from '../assets/img/todo.png'
 import invoice from '../assets/img/Invoice.png'
 import eye from '../assets/img/eye.svg'
+
+const cardVariants = {
+  offscreen: { opacity: 0, y: 40 },
+  onscreen: (i) => ({ opacity: 1, y: 0, transition: { delay: i * 0.15, duration: 0.6 } }),
+}
 
 const Portfolio = () => {
   return (
@@ -14,55 +20,49 @@ const Portfolio = () => {
         </div>
          {/* <!-- Project Grid --> */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 my-8">
-          {/* <!-- Project 1 Card Template --> */}
-          <div className="cursor-pointer text-white rounded-xl p-4 flex flex-col items-center justify-center group">
-            <div className="card-hoverable relative w-full h-40 overflow-hidden rounded-3xl mb-2">
-              <img className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 card"
-                src={demon} alt="Beat The Space Demon" />
-                <a href="https://adytia855.github.io/Space-Demon/" target="_blank"><div
-                className="card-overlay absolute inset-0 bg-zinc-400/75 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-                <img src={eye} alt="View" className="w-8 h-8" />
-              </div></a>
-            </div>
-            <div className="text-center">
-              <h3 className="font-semibold text-base">Beat The Space Demon</h3>
-              <p className="text-sm text-zinc-400">Game</p>
-            </div>
-          </div>
-        
-          {/* <!-- Project 2 --> */}
-          <div className="text-white rounded-xl p-4 flex flex-col items-center justify-center group">
-            <div className="card-hoverable cursor-pointer relative w-full h-40 overflow-hidden rounded-3xl mb-2">
-              <img className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 card" src={todo}
-                alt="To-Do App" />
-              <a href="https://adytia855.github.io/To-Do-app/" target="_blank"><div
-                className="card-overlay absolute inset-0 bg-amber-400/75 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-                <img src={eye} alt="View" className="w-8 h-8" />
-              </div></a>
-            </div>
-            <div className="text-center">
-              <h3 className="font-semibold text-base">To-Do App</h3>
-              <p className="text-sm text-zinc-400">Application</p>
-            </div>
-          </div>
-        
-          {/* <!-- Project 3 --> */}
-          <div className="text-white rounded-xl p-4 flex flex-col items-center justify-center group">
-            <div className="card-hoverable cursor-pointer relative w-full h-40 overflow-hidden rounded-3xl mb-2">
-              <img className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 card"
-                src={invoice} alt="Invoice To PDF Generator" />
-              <a href="https://adytia855.github.io/Invoice-Generator/" target="_blank"><div
-                className="card-overlay absolute inset-0 bg-zinc-400/75 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300">
-                <img src={eye} alt="View" className="w-8 h-8" />
-              </div></a>
-            </div>
-            <div className="text-center">
-              <h3 className="font-semibold text-base">Invoice To PDF Generator</h3>
-              <p className="text-sm text-zinc-400">Application</p>
-            </div>
-          </div>
+          {[{
+            img: demon,
+            title: 'Beat The Space Demon',
+            desc: 'Game',
+            link: 'https://adytia855.github.io/Space-Demon/',
+            overlay: 'bg-zinc-400/75',
+          }, {
+            img: todo,
+            title: 'To-Do App',
+            desc: 'Application',
+            link: 'https://adytia855.github.io/To-Do-app/',
+            overlay: 'bg-amber-400/75',
+          }, {
+            img: invoice,
+            title: 'Invoice To PDF Generator',
+            desc: 'Application',
+            link: 'https://adytia855.github.io/Invoice-Generator/',
+            overlay: 'bg-zinc-400/75',
+          }].map((card, i) => (
+            <motion.div
+              key={card.title}
+              className="text-white rounded-xl p-4 flex flex-col items-center justify-center group"
+              initial="offscreen"
+              whileInView="onscreen"
+              viewport={{ once: true, amount: 0.3 }}
+              custom={i}
+              variants={cardVariants}
+            >
+              <div className="card-hoverable relative w-full h-40 overflow-hidden rounded-3xl mb-2 cursor-pointer">
+                <img className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105 card" src={card.img} alt={card.title} />
+                <a href={card.link} target="_blank" rel="noopener noreferrer">
+                  <div className={`card-overlay absolute inset-0 ${card.overlay} opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity duration-300`}>
+                    <img src={eye} alt="View" className="w-8 h-8" />
+                  </div>
+                </a>
+              </div>
+              <div className="text-center">
+                <h3 className="font-semibold text-base">{card.title}</h3>
+                <p className="text-sm text-zinc-400">{card.desc}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-        
       </section>
   )
 }
