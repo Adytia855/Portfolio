@@ -14,7 +14,6 @@ const App = () => {
   const [formLoading, setFormLoading] = useState(false)
   const formRef = useRef(null)
 
-  // Refs for each section
   const sectionRefs = {
     aboutMe: useRef(null),
     resume: useRef(null),
@@ -22,11 +21,9 @@ const App = () => {
     contact: useRef(null),
   }
 
-  // Section navigation handler
   const handleNavClick = (section) => {
     setActiveSection(section)
     setActiveNav(section)
-    // Use scroll-behavior: smooth and scrollMarginTop for better smoothness
     setTimeout(() => {
       const el = sectionRefs[section]?.current
       if (el) {
@@ -35,7 +32,6 @@ const App = () => {
     }, 100)
   }
 
-  // Contact form submit handler
   const handleFormSubmit = async (e) => {
     e.preventDefault()
     setFormLoading(true)
