@@ -4,6 +4,7 @@ import demon from '../assets/img/demon.png'
 import todo from '../assets/img/todo.png'
 import invoice from '../assets/img/Invoice.png'
 import eye from '../assets/img/eye.svg'
+import mern from '../assets/img/mern.png'
 
 const cardVariants = {
   offscreen: { opacity: 0, y: 40 },
@@ -29,14 +30,20 @@ const Portfolio = () => {
           }, {
             img: todo,
             title: 'To-Do App',
-            desc: 'Application',
+            desc: 'App',
             link: 'https://adytia855.github.io/To-Do-app/',
             overlay: 'bg-amber-400/75',
           }, {
             img: invoice,
             title: 'Invoice To PDF Generator',
-            desc: 'Application',
+            desc: 'App',
             link: 'https://adytia855.github.io/Invoice-Generator/',
+            overlay: 'bg-zinc-400/75',
+          }, {
+            img: mern,
+            title: 'MERNboard',
+            desc: 'Fullstack App',
+            link: 'https://mer-nboard.vercel.app',
             overlay: 'bg-zinc-400/75',
           }].map((card, i) => (
             <motion.div

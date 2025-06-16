@@ -20,7 +20,7 @@ const App = () => {
     <main id="body" className="bg-black noise min-h-screen text-white">
       <Navbar setActiveSection={setActiveSection} activeSection={activeSection} />
       <main id="profileContainer" className="pt-26 flex flex-col lg:flex-row gap-6 min-h-screen space-y-8 px-4 md:px-28 lg:px-24 xl:px-60">
-        <Profile />
+        <Profile  onLetsTalk={() => setActiveSection('contact')} />
         <div id="contentContainer" className="flex flex-col gap-6 lg:w-2/3">
           <AnimatePresence mode="wait">
             {activeSection === 'aboutMe' && (
