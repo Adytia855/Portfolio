@@ -52,56 +52,23 @@ const App = () => {
         <div id="contentContainer" className="flex flex-col gap-6 lg:w-2/3">
           <AnimatePresence mode="wait" initial={false}>
             {activeSection === 'aboutMe' && (
-              <motion.div
-                key="aboutMe"
-                variants={sectionVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                style={{ width: '100%' }}
-              >
+              <motion.div key="aboutMe" variants={sectionVariants} initial="initial" animate="animate" exit="exit" style={{ width: '100%' }}>
                 <AboutMe />
               </motion.div>
             )}
             {activeSection === 'resume' && (
-              <motion.div
-                key="resume"
-                variants={sectionVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                style={{ width: '100%' }}
-              >
+              <motion.div key="resume" variants={sectionVariants} initial="initial" animate="animate" exit="exit" style={{ width: '100%' }}>
                 <Resume />
               </motion.div>
             )}
             {activeSection === 'portfolio' && (
-              <motion.div
-                key="portfolio"
-                variants={sectionVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                style={{ width: '100%' }}
-              >
+              <motion.div key="portfolio" variants={sectionVariants} initial="initial" animate="animate" exit="exit" style={{ width: '100%' }}>
                 <Portfolio isActive={activeSection === 'portfolio'} />
               </motion.div>
             )}
             {activeSection === 'contact' && (
-              <motion.div
-                key="contact"
-                variants={sectionVariants}
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                style={{ width: '100%' }}
-              >
-                <Contact 
-                  formRef={formRef} 
-                  onFormSubmit={handleFormSubmit} 
-                  showAlert={showAlert} 
-                  formLoading={formLoading} 
-                />
+              <motion.div key="contact" variants={sectionVariants} initial="initial" animate="animate" exit="exit" style={{ width: '100%' }} >
+                <Contact formRef={formRef} onFormSubmit={handleFormSubmit} showAlert={showAlert} formLoading={formLoading} />
               </motion.div>
             )}
           </AnimatePresence>

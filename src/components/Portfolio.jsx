@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import demon from '../assets/demon.png'
 import todo from '../assets/todo.png'
 import invoice from '../assets/Invoice.png'
+import mernboard from '../assets/mernboard.png'
 import eye from '../assets/eye.svg'
 
 const projects = [
@@ -18,14 +19,21 @@ const projects = [
     link: 'https://adytia855.github.io/To-Do-app/',
     overlay: 'bg-amber-400/75',
     title: 'To-Do App',
-    type: 'Application',
+    type: 'App',
   },
   {
     img: invoice,
     link: 'https://adytia855.github.io/Invoice-Generator/',
     overlay: 'bg-zinc-400/75',
     title: 'Invoice To PDF Generator',
-    type: 'Application',
+    type: 'App',
+  },
+  {
+    img: mernboard,
+    link: 'https://mer-nboard.vercel.app/',
+    overlay: 'bg-zinc-400/75',
+    title: 'MERNboard',
+    type: 'Fullstack App',
   },
 ]
 
