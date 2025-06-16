@@ -1,1 +1,65 @@
 @import "tailwindcss";
+
+html, body {
+  height: 100%;
+}
+
+.noise {
+  background-image: url('grainy.svg') !important;
+  background-repeat: repeat !important;
+}
+
+.line {
+  border: 3px solid #FFB900;
+  width: 45px;
+  height: 0px;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 50s linear infinite;
+}
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sosmed-btn.clicked span.bg-amber-400 {
+  transform: scale(1) !important;
+  transition: transform 0.3s !important;
+}
+
+.card-hoverable.clicked .card-overlay {
+  opacity: 1 !important;
+  transition: opacity 0.3s !important;
+}
+.card-hoverable.clicked img.card {
+  transform: scale(1.05) !important;
+  transition: transform 0.3s !important;
+}
+
+#btTalk.clicked {
+  background-color: transparent;
+  color: #FFB900;
+  border-color: #FFB900;
+  color: #FFB900;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+#btTalk.clicked > div > span:first-child {
+  transform: translateY(-100%);
+}
+#btTalk.clicked > div > span:last-child {
+  transform: translateY(-100%);
+}
