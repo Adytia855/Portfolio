@@ -4,6 +4,7 @@ import demon from '../assets/demon.png'
 import todo from '../assets/todo.png'
 import invoice from '../assets/Invoice.png'
 import mernboard from '../assets/mernboard.png'
+import stackbot from '../assets/stackbot.png'
 import eye from '../assets/eye.svg'
 
 const projects = [
@@ -34,6 +35,13 @@ const projects = [
     overlay: 'bg-zinc-400/75',
     title: 'MERNboard',
     type: 'Fullstack App',
+  },
+  {
+    img: stackbot,
+    link: 'https://stack-bot-ai.vercel.app/',
+    overlay: 'bg-zinc-400/75',
+    title: 'StackBot AI',
+    type: 'AI Chatbot',
   },
 ]
 
