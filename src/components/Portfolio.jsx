@@ -5,6 +5,7 @@ import todo from '../assets/todo.png'
 import invoice from '../assets/Invoice.png'
 import mernboard from '../assets/mernboard.png'
 import stackbot from '../assets/stackbot.png'
+import neural from '../assets/Neural.png'
 import eye from '../assets/eye.svg'
 
 const projects = [
@@ -42,6 +43,13 @@ const projects = [
     overlay: 'bg-zinc-400/75',
     title: 'StackBot AI',
     type: 'AI Chatbot',
+  },
+  {
+    img: neural,
+    link: 'https://neural-doodle.vercel.app/',
+    overlay: 'bg-zinc-400/75',
+    title: 'NeuralDoodle',
+    type: 'AI Image Generator',
   },
 ]
 
