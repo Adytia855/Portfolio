@@ -33,7 +33,7 @@ const projects = [
   {
     img: mernboard,
     link: 'https://mer-nboard.vercel.app/',
-    overlay: 'bg-zinc-400/75',
+    overlay: 'bg-amber-400/75',
     title: 'MERNboard',
     type: 'Fullstack App',
   },
@@ -47,7 +47,7 @@ const projects = [
   {
     img: neural,
     link: 'https://neural-doodle.vercel.app/',
-    overlay: 'bg-zinc-400/75',
+    overlay: 'bg-amber-400/75',
     title: 'NeuralDoodle',
     type: 'AI Image Generator',
   },
