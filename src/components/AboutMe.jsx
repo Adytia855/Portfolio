@@ -5,12 +5,13 @@ import js from '../assets/js.svg'
 import nodejs from '../assets/node-js.svg'
 import git from '../assets/git.svg'
 import github from '../assets/github.svg'
-import jsonimg from '../assets/json.svg'
-import eslint from '../assets/eslint.svg'
+import figma from '../assets/figma.svg'
 import bootstrap from '../assets/bootstrap.svg'
 import tailwind from '../assets/tailwind.svg'
-import alpine from '../assets/alpine.svg'
+import mongodb from '../assets/mongodb.svg'
 import postman from '../assets/postman.svg'
+import express from '../assets/express.svg'
+import react from '../assets/react.svg'
 
 const AboutMe = () => {
   return (
@@ -136,28 +137,30 @@ const AboutMe = () => {
                 <img src={html5} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="HTML5" />
                 <img src={css} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="CSS" />
                 <img src={js} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="JavaScript" />
+                <img src={figma} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Figma" />
+                <img src={mongodb} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="MongoDB" />
+                <img src={express} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="express" />
                 <img src={nodejs} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Node.js" />
+                <img src={react} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="react" />
+                <img src={tailwind} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Tailwind" />
                 <img src={git} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Git" />
                 <img src={github} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="GitHub" />
-                <img src={jsonimg} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="JSON" />
-                <img src={eslint} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="ESLint" />
                 <img src={bootstrap} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Bootstrap" />
-                <img src={tailwind} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Tailwind" />
-                <img src={alpine} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Alpine.js" />
                 <img src={postman} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Postman" />
               </div>
               <div className="flex items-center space-x-20 ml-20">
                 <img src={html5} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="HTML5" />
                 <img src={css} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="CSS" />
                 <img src={js} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="JavaScript" />
+                <img src={figma} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Figma" />
+                <img src={mongodb} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="MongoDB" />
+                <img src={express} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="express" />
                 <img src={nodejs} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Node.js" />
+                <img src={react} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="react" />
+                <img src={tailwind} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Tailwind" />
                 <img src={git} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Git" />
                 <img src={github} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="GitHub" />
-                <img src={jsonimg} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="JSON" />
-                <img src={eslint} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="ESLint" />
                 <img src={bootstrap} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Bootstrap" />
-                <img src={tailwind} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Tailwind" />
-                <img src={alpine} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Alpine.js" />
                 <img src={postman} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Postman" />
               </div>
             </div>
