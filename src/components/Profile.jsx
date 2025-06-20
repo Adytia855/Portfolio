@@ -68,7 +68,7 @@ const Profile = ({ onTalkClick }) => {
     <aside id="profile" className="bg-gray-400/20 rounded-3xl p-8 text-center lg:w-1/3 max-h-max ">
       <img src={pc3} alt="Profile Picture" className="mx-auto mb-6 h-72 w-60 rounded-xl object-cover" />
       <h2 className="text-zinc-200 text-3xl font-extrabold mb-2">Adytia Griansyah</h2>
-      <p className="text-amber-400 text-2xl mb-1">Frontend Developer</p>
+      <p className="text-amber-400 text-2xl mb-1">Web Developer</p>
       <p className="text-gray-400 mb-4">Bandung, Indonesia</p>
 
       <div className="flex justify-center space-x-5 mb-6 text-gray-400">
