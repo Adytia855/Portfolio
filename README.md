@@ -1,4 +1,11 @@
 # Portfolio — Adytia Griansyah
+![React](https://img.shields.io/badge/React-18-blue?logo=react)
+![Tailwind CSS](https://img.shields.io/badge/TailwindCSS-3.0-38B2AC?logo=tailwindcss&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer--Motion-Animation-EF6CFF?logo=framer)
+![Vite](https://img.shields.io/badge/Vite-frontend-646CFF?logo=vite&logoColor=white)
+![License](https://img.shields.io/github/license/Adytia855/Portfolio)
+![Deploy](https://img.shields.io/badge/Live-Demo-green?style=flat&logo=vercel&link=https://portfolio-one-smoky-47.vercel.app)
+
 ![Portfolio Preview](./public/preview.jpg)
 
 
