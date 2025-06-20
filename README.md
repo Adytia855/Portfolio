@@ -1,5 +1,5 @@
 # Portfolio — Adytia Griansyah
-
+![Portfolio Preview](./public/preview.jpg)
 
 
 A responsive single‑page portfolio application built with **React**, **Vite**, and **Tailwind CSS** that showcases my profile, resume, projects, and contact form — complete with smooth scrolling animations powered by **Framer Motion**.
@@ -9,12 +9,9 @@ A responsive single‑page portfolio application built with **React**, **Vite**,
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Architecture](#architecture)
-- [Screenshots](#screenshots)
 - [Getting Started](#getting-started)
 - [Folder Structure](#folder-structure)
 - [Deployment](#deployment)
-- [Roadmap](#roadmap)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
@@ -69,9 +66,6 @@ const [formLoading, setFormLoading] = useState(false);
 - **AnimatePresence** wraps page transitions.
 - `motion.div` components drive element fades, slides & staggers.
 
-## Screenshots
-
-*Add screenshots or GIFs here (e.g. ****\`\`****).*
 
 ## Getting Started
 
@@ -130,17 +124,6 @@ npm run build
 # then deploy /dist with any static host (Vercel, Netlify, GitHub Pages, etc.)
 ```
 
-## Roadmap
-
--
-
-## Contributing
-
-1. **Fork** the repository.
-2. Create your feature branch: `git checkout -b feat/amazingFeature`.
-3. Commit your changes: `git commit -m 'feat: add amazingFeature'`.
-4. Push to the branch: `git push origin feat/amazingFeature`.
-5. Open a **pull request**.
 
 ## License
 
