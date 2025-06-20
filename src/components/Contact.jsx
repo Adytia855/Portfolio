@@ -1,5 +1,26 @@
 import React from 'react'
 
+/**
+ * @file Contact.jsx
+ * @description A React component that displays a contact form and a map.
+ * This component is part of a portfolio website and allows users to send messages
+ * and view a location on a map. It receives props from its parent component (`App.jsx`)
+ * to handle form submission, display alerts, and manage loading states.
+ */
+
+/**
+ * Contact component.
+ * Renders the contact section of the portfolio, including an embedded map
+ * and a contact form. The form's submission logic and alert/loading states
+ * are handled by props passed from the parent `App` component.
+ * @param {object} props - The props passed to the component.
+ * @param {React.RefObject<HTMLFormElement>} props.formRef - A ref to the form element, used by the parent to access form data.
+ * @param {function} props.onFormSubmit - Callback function to handle the form submission.
+ * @param {boolean} props.showAlert - Boolean to control the visibility of the success alert.
+ * @param {boolean} props.formLoading - Boolean to indicate if the form is currently submitting.
+ * @returns {JSX.Element} The Contact section component.
+ */
+
 const Contact = () => {
   return (
     <section id="contact" className="bg-gray-400/20 rounded-3xl p-8 w-full">
@@ -9,7 +30,7 @@ const Contact = () => {
           <hr className="line rounded-full" />
         </div>
 
-        {/* Map */}
+         {/* Embedded Google Map */}
         <section className="mapbox my-6" data-mapbox>
           <figure>
             <div style={{ position: 'relative' }}>
@@ -26,7 +47,7 @@ const Contact = () => {
         {/* Contact Form */}
         <div className="mt-6">
           <h3 className="font-extrabold text-xl mb-4">Contact Form</h3>
-          {/* ALERT */}
+          {/* Alert message display (visibility controlled by parent component) */}
           <div id="alert-4" className="items-start gap-3 p-4 mb-6 text-yellow-800 rounded-lg bg-yellow-50 dark:bg-zinc-800 dark:text-yellow-300 
             transition-all duration-500 ease-in-out opacity-0 translate-y-3" style={{ display: 'none' }} role="alert">
             {/* Icon */}
@@ -49,6 +70,7 @@ const Contact = () => {
               </svg>
             </button>
           </div>
+          {/* The actual form element. Submission is handled by the parent component via props. */}
           <form name="portfolio-contact-form" className="space-y-4 w-full">
             {/* Name & Email */}
             <div className="flex flex-col sm:flex-row gap-4">
@@ -76,6 +98,7 @@ const Contact = () => {
             {/* Submit Button */}
             <div className="flex justify-end">
               <button type="submit" className="background relative group w-40 h-14 bg-amber-400  text-white hover:bg-transparent hover:text-amber-400 font-semibold rounded-xl overflow-hidden transition-all duration-300 cursor-pointer">
+                {/* Loading spinner (visibility controlled by parent component) */}
                 <svg id="spinner" className="loading hidden absolute inset-0 items-center justify-center m-auto animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                   <circle className="opacity-75" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                   <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z">

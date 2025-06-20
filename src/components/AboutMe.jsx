@@ -13,6 +13,20 @@ import postman from '../assets/postman.svg'
 import express from '../assets/express.svg'
 import react from '../assets/react.svg'
 
+/**
+ * @file AboutMe.jsx
+ * @description A React component that displays information about the user, their expertise, and the tools they use.
+ * This component is part of a portfolio website and is intended to give visitors a comprehensive overview of the user's background and skills.
+ * It includes a personal introduction, details about UI/UX design and web development expertise, and a marquee of tool icons.
+ */
+
+/**
+ * AboutMe component.
+ * Renders the "About Me" section of the portfolio, including a personal introduction,
+ * expertise in UI/UX and web development, and a marquee of tools used.
+ *
+ * @returns {JSX.Element} The AboutMe section component.
+ */
 const AboutMe = () => {
   return (
     <section id="aboutMe" className="bg-gray-400/20 rounded-3xl p-8 w-full">
@@ -22,7 +36,7 @@ const AboutMe = () => {
           <hr className="line rounded-full" />
         </div>
         <div className="my-4 flex flex-col">
-          {/* <!-- Hero --> */}
+          {/* <!-- Hero: Personal Introduction --> */}
           <div className="text-zinc-400 rounded-xl p-4 text-left">
             <h2 className="text-2xl text-zinc-200 font-bold mb-3">About me</h2>
             <p>I thrive on new challenges, constantly exploring different industries—from event organizing and teaching to logistics, photography, and video editing. Every career shift has given me fresh perspectives, new skills, and a deeper appreciation for creativity and problem-solving.</p>
@@ -30,12 +44,13 @@ const AboutMe = () => {
             <p>Now, I’m diving into web development, bringing my diverse experience into the digital space. For me, growth isn’t about staying in one lane, it’s about embracing change, adapting fast, and building something uniquely my own.</p>
           </div>
 
-          {/* <!-- Hero2  --> */}
+          {/* <!-- Expertise Section --> */}
           <div className="text-zinc-200 rounded-xl mt-4 p-4 text-left">
             <h2 className="text-2xl font-bold mb-1">My Expertise</h2>
           </div>
           <div className="p-4 flex flex-col items-center justify-center">
             <div className="my-1 flex flex-col md:flex-row gap-2 w-full">
+              {/* <!-- UI/UX Expertise --> */}
               <div className="md:w-1/2 bg-zinc-900 shadow-lg drop-shadow-xl/25 text-zinc-200 rounded-xl p-4 flex items-center justify-center">
                 <svg className="mr-4" version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 32 32"
@@ -53,7 +68,7 @@ const AboutMe = () => {
                   <p className="text-sm text-zinc-400">The most advanced and premium design crafted with professional excellence.</p>
                 </div>
               </div>
-              {/* <!-- Right Section --> */}
+              {/* <!-- Web Development Expertise --> */}
               <div className="md:w-1/2 bg-zinc-900 drop-shadow-xl/25 text-white rounded-xl p-4 flex items-center justify-center">
                 <svg className="mr-4" fill="#FFB900" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
                   xmlnsXlink="http://www.w3.org/1999/xlink" viewBox="0 0 480 480" xmlSpace="preserve" width="64px"
@@ -127,11 +142,13 @@ const AboutMe = () => {
             </div>
           </div>
 
-          {/* <!-- Marquee --> */}
+          {/* <!-- Tools Marquee Section --> */}
           <div className="text-zinc-200 rounded-xl  p-4 text-left">
             <h2 className="text-2xl font-bold my-8">My Tools</h2>
           </div>
+          {/* Container for the marquee effect */}
           <div className="overflow-hidden w-full py-4">
+            {/* Marquee content that scrolls */}
             <div className="marquee flex w-max animate-marquee">
               <div className="flex items-center space-x-20">
                 <img src={html5} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="HTML5" />
@@ -148,6 +165,7 @@ const AboutMe = () => {
                 <img src={bootstrap} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Bootstrap" />
                 <img src={postman} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="Postman" />
               </div>
+              {/* Second set of tool icons (for seamless looping) */}
               <div className="flex items-center space-x-20 ml-20">
                 <img src={html5} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="HTML5" />
                 <img src={css} className="h-12 w-12 object-contain lg:h-12 lg:w-12" alt="CSS" />

@@ -1,5 +1,24 @@
 import React from 'react'
 
+/**
+ * @file Navbar.jsx
+ * @description A React component that renders the main navigation bar for the portfolio.
+ * It displays navigation items with icons and labels, highlighting the currently active section.
+ * The navigation items and their corresponding icons are defined in the `navItems` array.
+ */
+
+/**
+ * @typedef {object} NavItem
+ * @property {string} id - A unique identifier for the navigation item, corresponding to a section ID.
+ * @property {string} label - The text label displayed for the navigation item (e.g., in a tooltip).
+ * @property {JSX.Element} icon - The SVG icon element for the navigation item.
+ */
+
+/**
+ * Array of navigation item objects. Each object defines an item in the navbar.
+ * @type {NavItem[]}
+ */
+
 const navItems = [
   { id: 'aboutMe', label: 'About', icon: (
     <svg className="transition" width="24px" height="24px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"
@@ -73,6 +92,16 @@ const navItems = [
     </svg>
   ) },
 ]
+
+/**
+ * Navbar component.
+ * Renders a fixed navigation bar with clickable items that scroll to different sections of the page.
+ *
+ * @param {object} props - The props passed to the component.
+ * @param {string} props.activeNav - The ID of the currently active navigation item/section.
+ * @param {function(string): void} props.onNavClick - Callback function invoked when a navigation item is clicked, passing the item's ID.
+ * @returns {JSX.Element} The Navbar component.
+ */
 
 const Navbar = ({ activeNav, onNavClick }) => {
   return (

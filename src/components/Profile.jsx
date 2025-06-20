@@ -2,24 +2,63 @@ import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import pc3 from '../assets/pc3.jpg'
 
+/**
+ * @file Profile.jsx
+ * @description A React component that displays the user's profile information,
+ * including a profile picture, name, title, location, social media links,
+ * and a "Let's Talk" button.
+ * It uses Framer Motion for interactive animations on social media icons.
+ */
+
+/**
+ * Framer Motion variants for social media icon animations.
+ * Defines 'initial', 'animate' (for click/touch), and 'rest' states.
+ */
+
 const sosmedVariants = {
   initial: { scale: 1, rotate: 0 },
   animate: { scale: 1.18, rotate: -10, transition: { type: 'spring', stiffness: 300, damping: 15, duration: 0.18 } },
   rest: { scale: 1, rotate: 0, transition: { type: 'spring', stiffness: 300, damping: 20, duration: 0.18 } },
 }
 
+/**
+ * Profile component.
+ * Renders the user's profile card with personal details and social media links.
+ *
+ * @param {object} props - The props passed to the component.
+ * @param {function(): void} props.onTalkClick - Callback function invoked when the "Let's Talk" button is clicked.
+ * @returns {JSX.Element} The Profile component.
+ */
 const Profile = ({ onTalkClick }) => {
+   /**
+   * State to manage the "clicked" visual feedback for the "Let's Talk" button.
+   * @type {[boolean, React.Dispatch<React.SetStateAction<boolean>>]}
+   */
   const [talkClicked, setTalkClicked] = useState(false)
+  /**
+   * State to manage which social media icon is currently "clicked" for animation.
+   * Stores the ID ('github', 'instagram', 'linkedin') of the clicked icon, or null.
+   * @type {[string|null, React.Dispatch<React.SetStateAction<string|null>>]}
+   */
   const [sosmedClicked, setSosmedClicked] = useState(null)
 
-  // Handler for Let's Talk button
+  /**
+   * Handles the click event for the "Let's Talk" button.
+   * Sets `talkClicked` to true for visual feedback, calls the `onTalkClick` prop,
+   * and then resets `talkClicked` after a short delay.
+   */
   const handleTalkClick = () => {
     setTalkClicked(true)
     if (onTalkClick) onTalkClick()
     setTimeout(() => setTalkClicked(false), 600)
   }
 
-  // Handler for social media button click/touch
+   /**
+   * Handles click/touch events for social media icons.
+   * Sets `sosmedClicked` to the ID of the clicked icon for animation
+   * and then resets it after a short delay.
+   * @param {string} id - The identifier of the social media icon clicked (e.g., 'github').
+   */
   const handleSosmedClick = (id) => {
     setSosmedClicked(id)
     setTimeout(() => setSosmedClicked(null), 400)

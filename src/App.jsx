@@ -7,13 +7,52 @@ import Resume from './components/Resume'
 import Portfolio from './components/Portfolio'
 import Contact from './components/Contact'
 
+/**
+ * @file App.jsx
+ * @description The main application component for the portfolio website.
+ * It manages the active section, navigation, and handles form submissions.
+ * It orchestrates the rendering of different sections like AboutMe, Resume, Portfolio, and Contact.
+ */
+
+/**
+ * The main App component.
+ * Handles routing between different sections of the portfolio,
+ * manages state for active navigation, form submissions, and alerts.
+ *
+ * @returns {JSX.Element} The main application structure.
+ */
+
 const App = () => {
+   /**
+   * State to track the currently visible section (e.g., 'aboutMe', 'resume').
+   * @type {[string, React.Dispatch<React.SetStateAction<string>>]}
+   */
   const [activeSection, setActiveSection] = useState('aboutMe')
+  /**
+   * State to track the currently active navigation item in the Navbar.
+   * @type {[string, React.Dispatch<React.SetStateAction<string>>]}
+   */
   const [activeNav, setActiveNav] = useState('aboutMe')
+  /**
+   * State to control the visibility of the contact form submission success alert.
+   * @type {[boolean, React.Dispatch<React.SetStateAction<boolean>>]}
+   */
   const [showAlert, setShowAlert] = useState(false)
+  /**
+   * State to indicate if the contact form is currently submitting.
+   * @type {[boolean, React.Dispatch<React.SetStateAction<boolean>>]}
+   */
   const [formLoading, setFormLoading] = useState(false)
+  /**
+   * Ref to the contact form element.
+   * @type {React.RefObject<HTMLFormElement>}
+   */
   const formRef = useRef(null)
 
+  /**
+   * Refs for each main section to enable smooth scrolling.
+   * @type {{aboutMe: React.RefObject<HTMLDivElement>, resume: React.RefObject<HTMLDivElement>, portfolio: React.RefObject<HTMLDivElement>, contact: React.RefObject<HTMLDivElement>}}
+   */
   const sectionRefs = {
     aboutMe: useRef(null),
     resume: useRef(null),
@@ -21,6 +60,11 @@ const App = () => {
     contact: useRef(null),
   }
 
+  /**
+   * Handles navigation clicks.
+   * Sets the active section and navigation item, then scrolls to the selected section.
+   * @param {string} section - The ID of the section to navigate to.
+   */
   const handleNavClick = (section) => {
     setActiveSection(section)
     setActiveNav(section)
@@ -32,6 +76,11 @@ const App = () => {
     }, 100)
   }
 
+    /**
+   * Handles the submission of the contact form.
+   * Sends form data to a Google Apps Script endpoint.
+   * @param {React.FormEvent<HTMLFormElement>} e - The form submission event.
+   */
   const handleFormSubmit = async (e) => {
     e.preventDefault()
     setFormLoading(true)

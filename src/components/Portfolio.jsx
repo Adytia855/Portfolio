@@ -8,6 +8,27 @@ import stackbot from '../assets/stackbot.png'
 import neural from '../assets/Neural.png'
 import eye from '../assets/eye.svg'
 
+/**
+ * @file Portfolio.jsx
+ * @description A React component that displays a collection of projects in a grid layout.
+ * Each project card includes an image, title, type, and a link to the live project.
+ * The component uses Framer Motion for entry animations of the project cards.
+ */
+
+/**
+ * @typedef {object} Project
+ * @property {string} img - The source path for the project's preview image.
+ * @property {string} link - The URL to the live project or its repository.
+ * @property {string} overlay - Tailwind CSS classes for the card's hover overlay background.
+ * @property {string} title - The title of the project.
+ * @property {string} type - The type or category of the project (e.g., "Game", "App", "Fullstack App").
+ */
+
+/**
+ * Array of project objects to be displayed in the portfolio.
+ * @type {Project[]}
+ */
+
 const projects = [
   {
     img: demon,
@@ -53,6 +74,12 @@ const projects = [
   },
 ]
 
+/**
+ * Framer Motion variants for animating the project cards.
+ * Defines 'hidden' and 'visible' states for opacity and y-axis translation,
+ * with a staggered delay for each card.
+ */
+
 const cardVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i) => ({
@@ -66,6 +93,15 @@ const cardVariants = {
     },
   }),
 }
+
+/**
+ * Portfolio component.
+ * Renders a section displaying a grid of project cards.
+ *
+ * @param {object} props - The props passed to the component.
+ * @param {boolean} props.isActive - A boolean indicating if the portfolio section is currently active/visible. This is used to trigger animations.
+ * @returns {JSX.Element} The Portfolio section component.
+ */
 
 const Portfolio = ({ isActive }) => {
   return (

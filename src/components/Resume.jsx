@@ -1,5 +1,17 @@
 import React from 'react'
 
+/**
+ * @file Resume.jsx
+ * @description A React component that displays the user's resume, including education and work experience.
+ * The information is presented in a timeline format.
+ */
+
+/**
+ * Resume component.
+ * Renders the resume section of the portfolio, detailing education and work experience in a chronological timeline.
+ * @returns {JSX.Element} The Resume section component.
+ */
+
 const Resume = () => {
   return (
     <section id="resume" className="p-8 w-full rounded-3xl bg-gray-400/20">
